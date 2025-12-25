@@ -1,0 +1,6 @@
+@TicketEngine.UserApi_HostAddress = http://localhost:5277
+
+GET {{TicketEngine.UserApi_HostAddress}}/
+Accept: application/json
+
+###
