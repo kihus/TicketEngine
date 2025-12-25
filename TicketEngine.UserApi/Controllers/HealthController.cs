@@ -1,0 +1,14 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace TicketEngine.CustomerApi.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class HealthController : ControllerBase
+{
+    [HttpGet]
+    public async Task<IActionResult> HealthyCheck()
+    {
+        return Ok("Alive");
+    }
+}
