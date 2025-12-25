@@ -1,4 +1,4 @@
-﻿namespace Domain.TicketEngine.Client.DTOs;
+﻿namespace Domain.TicketEngine.CustomerApi.DTOs;
 
 public class ClientResponseDto
 {

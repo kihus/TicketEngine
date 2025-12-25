@@ -1,4 +1,4 @@
-﻿namespace Domain.TicketEngine.Client.Messages.Events;
+﻿namespace Domain.TicketEngine.CustomerApi.Messages.Events;
 
 public class UpdatedClientEvent
 {

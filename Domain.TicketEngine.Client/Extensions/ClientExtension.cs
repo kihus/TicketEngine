@@ -1,4 +1,4 @@
-﻿namespace Domain.TicketEngine.Client.Extensions;
+﻿namespace Domain.TicketEngine.CustomerApi.Extensions;
 
 public class ClientExtension
 {

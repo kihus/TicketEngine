@@ -1,4 +1,4 @@
-﻿namespace Domain.TicketEngine.Client.Messages;
+﻿namespace Domain.TicketEngine.CustomerApi.Messages;
 
 public abstract class BaseMessage
 {
