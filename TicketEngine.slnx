@@ -3,7 +3,7 @@
     <Project Path="TicketEngine.UserApi/TicketEngine.UserApi.csproj" />
   </Folder>
   <Folder Name="/2- Domain/">
-    <Project Path="Domain.TicketEngine.User/Domain.TicketEngine.UserApi.csproj" Id="f3f75a96-b451-46da-9efc-fca98f613310" />
+    <Project Path="Domain.TicketEngine.Client/Domain.TicketEngine.Client.csproj" Id="40effeda-2825-4804-993f-d7b5e87d457b" />
   </Folder>
   <Folder Name="/3- Infrastructure/" />
 </Solution>
