@@ -1,5 +1,5 @@
 ﻿namespace Domain.TicketEngine.CustomerApi.DTOs;
 
-public class ClientResponseDto
+public class CustomerResponseDto
 {
 }

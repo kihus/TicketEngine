@@ -1,5 +1,5 @@
 ﻿namespace Domain.TicketEngine.CustomerApi.Messages.Events;
 
-public class UpdatedClientEvent
+public class UpdatedCustomerEvent
 {
 }
