@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Domain.TicketEngine.Client\Domain.TicketEngine.CustomerApi.csproj" />
     <ProjectReference Include="..\Infrastructure.Data\Infrastructure.CustomerApi.Data.csproj" />
   </ItemGroup>

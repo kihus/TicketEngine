@@ -9,7 +9,8 @@ public class Customer(
     DateOnly birthdate,
     string document,
     string email,
-    string password
+    string password,
+    string role
     )
 {
     [BsonId]
@@ -18,6 +19,7 @@ public class Customer(
     public string LastName { get; private set; } = lastName;
     public DateOnly Birthdate { get; private set; } = birthdate;
     public string? Phone { get; private set; } = null;
+    public string Role { get; private set; } = role;
     public string Document { get; private set; } = document;
     public string Email { get; private set; } = email;
     public string Password { get; private set; } = password;
@@ -29,14 +31,16 @@ public class Customer(
         string? phone, 
         string document,
         string email,
-        string password
+        string password,
+        string role
         ) : this (
             name, 
             lastName, 
             birthdate, 
             document, 
             email, 
-            password
+            password,
+            role
             )
     {
         Phone = phone;
