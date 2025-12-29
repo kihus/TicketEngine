@@ -7,5 +7,7 @@ public interface ICustomerService
 {
 	Task CreateCustomerAsync(CreateCustomerCommand customerCommand);
 
-	Task<IEnumerable<CustomerResponseDto>> GetAllCustomersAsync(); 
+	Task<IEnumerable<CustomerResponseDto>> GetAllCustomersAsync();
+
+	Task<string> GetTokenAuthAsync(GetLoginAuth login);
 }

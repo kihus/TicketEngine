@@ -2,6 +2,7 @@
 using Domain.TicketEngine.CustomerApi.Entities;
 using Domain.TicketEngine.CustomerApi.Extensions;
 using Domain.TicketEngine.CustomerApi.Messages.Commands;
+using Microsoft.AspNetCore.Mvc;
 using TicketEngine.CustomerApi.Repositories.v1.Interfaces;
 using TicketEngine.CustomerApi.Services.v1.Interfaces;
 using static BCrypt.Net.BCrypt;
@@ -44,6 +45,26 @@ public class CustomerService(
 		{
 			var customers = await _customerRepository.GetAllCustomersAsync();
 			return customers;
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
+
+	public async Task<string> GetTokenAuthAsync(GetLoginAuth login)
+	{
+		try
+		{
+			var customer = await _customerRepository.GetUserByEmailAsync(login.Email);
+
+			if (customer is null)
+				throw new ArgumentException("Error! User not found!");
+
+			if (!Verify(customer.Password, login.Password))
+				throw new ArgumentException("Error! Passowords don't match");
+
+			return "goiaba";
 		}
 		catch (Exception ex)
 		{

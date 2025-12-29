@@ -1,7 +1,6 @@
 ﻿using Domain.TicketEngine.CustomerApi.DTOs;
 using Domain.TicketEngine.CustomerApi.Entities;
 using Domain.TicketEngine.CustomerApi.Extensions;
-using Domain.TicketEngine.CustomerApi.Messages.Commands;
 using Infrastructure.CustomerApi.Data.Mongo;
 using MongoDB.Driver;
 using TicketEngine.CustomerApi.Repositories.v1.Interfaces;
@@ -39,4 +38,18 @@ public class CustomerRespository(
             throw new MongoException("An mongo error occurred while process your request: " + ex.Message);
         }
     }
+
+	public async Task<Customer> GetUserByEmailAsync(string email)
+	{
+		try
+		{
+			var user = await _customerCollection.Find(c => c.Email == email).FirstOrDefaultAsync();
+
+			return user;
+		}
+		catch (MongoException ex)
+		{
+			throw new MongoException("An mongo error occured while process your request: " + ex.Message);
+		}
+	}
 }

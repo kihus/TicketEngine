@@ -1,5 +1,4 @@
-﻿using Domain.TicketEngine.CustomerApi.DTOs;
-using Domain.TicketEngine.CustomerApi.Messages.Commands;
+﻿using Domain.TicketEngine.CustomerApi.Messages.Commands;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TicketEngine.CustomerApi.Services.v1.Interfaces;
@@ -20,7 +19,7 @@ public class CustomerController(
         try
         {
             if (customerCommand is null)
-                return BadRequest("Error customer command cannot be null");
+                return BadRequest("Error! Customer command cannot be null");
 
             await _customerService.CreateCustomerAsync(customerCommand);
 
@@ -31,6 +30,26 @@ public class CustomerController(
             return StatusCode(400, ex.Message);
 		}
         catch (Exception ex)
+        {
+            return StatusCode(404, ex.Message);
+        }
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetTokenAuthAsync([FromBody] GetLoginAuth login)
+    {
+        try
+        {
+            if (login is null)
+                return BadRequest("Error! Login command cannot be null");
+
+            return Ok();
+        }
+        catch(ArgumentNullException ex)
+        {
+            return StatusCode(400, ex.Message);
+        }
+        catch(Exception ex)
         {
             return StatusCode(404, ex.Message);
         }
