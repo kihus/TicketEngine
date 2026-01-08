@@ -15,7 +15,7 @@ public static class CustomerExtension
 		{
 			Name = customer.Name,
 			LastName = customer.LastName,
-			Birthdate = customer.Birthdate,
+			Birthdate = DateOnly.FromDateTime(customer.Birthdate),
 			Phone = customer.Phone,
 			Role = customer.Role,
 		};

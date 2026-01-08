@@ -2,7 +2,6 @@
 using Domain.TicketEngine.CustomerApi.Entities;
 using Domain.TicketEngine.CustomerApi.Extensions;
 using Domain.TicketEngine.CustomerApi.Messages.Commands;
-using Microsoft.AspNetCore.Mvc;
 using TicketEngine.CustomerApi.Repositories.v1.Interfaces;
 using TicketEngine.CustomerApi.Services.v1.Interfaces;
 using static BCrypt.Net.BCrypt;
