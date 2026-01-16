@@ -1,6 +1,5 @@
 using Infrastructure.Data.Bearer_Token;
 using Infrastructure.Data.Bearer_Token.Interfaces;
-using Infrastructure.Data.Bearer_Token.Settings;
 using Infrastructure.Data.Extensions;
 using Infrastructure.Data.Mongo;
 using UserApi.Repositories.v1;

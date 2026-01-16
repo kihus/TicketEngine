@@ -11,3 +11,4 @@ services:
     environment:
       - MongoSettings__ConnectionURI=${MONGOSETTINGS_CONNECTIONURI}
       - MongoSettings__DatabaseName=${MONGOSETTINGS_DATABASENAME}
+      - JwtSettings__SecretKey=${JWTSETTINGS_SECRETKEY}
