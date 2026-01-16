@@ -2,6 +2,7 @@
 using Domain.User.Entities;
 using Domain.User.Extensions;
 using Domain.User.Messages.Commands;
+using Infrastructure.Data.Bearer_Token.Interfaces;
 using UserApi.Repositories.v1.Interfaces;
 using UserApi.Services.v1.Interfaces;
 using static BCrypt.Net.BCrypt;
@@ -9,10 +10,12 @@ using static BCrypt.Net.BCrypt;
 namespace UserApi.Services.v1;
 
 public class CustomerService(
-	ICustomerRepository customerRepository
+	ICustomerRepository customerRepository,
+	IAuthToken authToken
 	) : ICustomerService
 {
 	private readonly ICustomerRepository _customerRepository = customerRepository;
+	private readonly IAuthToken _authToken = authToken;
 	private readonly int _workFactor = 12;
 
 	public async Task CreateCustomerAsync(CreateCustomerCommand customerCommand)
@@ -63,7 +66,7 @@ public class CustomerService(
 			if (!Verify(login.Password, customer.Password))
 				throw new ArgumentException("Error! Passowords don't match");
 
-			return "goiaba";
+			return _authToken.GenerateToken(customer);
 		}
 		catch (Exception ex)
 		{

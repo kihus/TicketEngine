@@ -12,10 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddMongo(builder.Configuration);
+builder.Services.AddMongoSettings(builder.Configuration);
+builder.Services.AddTokenSettings(builder.Configuration);
 
 builder.Services.AddSingleton<MongoContext>();
-builder.Services.AddSingleton<TokenSettings>();
 
 builder.Services.AddScoped<ICustomerRepository, CustomerRespository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();

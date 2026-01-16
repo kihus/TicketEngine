@@ -8,14 +8,11 @@ using System.Text;
 
 namespace Infrastructure.Data.Bearer_Token;
 
-public sealed class AuthToken : IAuthToken
+public sealed class AuthToken(
+	TokenSettings settings
+	) : IAuthToken
 {
-	private readonly TokenSettings _settings;
-
-	public AuthToken(TokenSettings settings)
-	{
-		_settings = settings;
-	}
+	private readonly TokenSettings _settings = settings;
 
 	public string GenerateToken(Customer customer)
 	{
