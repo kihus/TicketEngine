@@ -1,7 +1,7 @@
-﻿using Domain.TicketEngine.CustomerApi.DTOs;
-using Domain.TicketEngine.CustomerApi.Entities;
+﻿using Domain.User.DTOs;
+using Domain.User.Entities;
 
-namespace TicketEngine.CustomerApi.Repositories.v1.Interfaces;
+namespace UserApi.Repositories.v1.Interfaces;
 
 public interface ICustomerRepository
 {

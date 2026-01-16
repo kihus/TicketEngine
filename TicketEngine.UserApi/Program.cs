@@ -1,13 +1,12 @@
-using Infrastructure.CustomerApi.Data.Bearer_Token;
-using Infrastructure.CustomerApi.Data.Bearer_Token.Interfaces;
-using Infrastructure.CustomerApi.Data.Bearer_Token.Settings;
-using Infrastructure.CustomerApi.Data.Extensions;
-using Infrastructure.CustomerApi.Data.Mongo;
-using Infrastructure.CustomerApi.Data.Mongo.Settings;
-using TicketEngine.CustomerApi.Repositories.v1;
-using TicketEngine.CustomerApi.Repositories.v1.Interfaces;
-using TicketEngine.CustomerApi.Services.v1;
-using TicketEngine.CustomerApi.Services.v1.Interfaces;
+using Infrastructure.Data.Bearer_Token;
+using Infrastructure.Data.Bearer_Token.Interfaces;
+using Infrastructure.Data.Bearer_Token.Settings;
+using Infrastructure.Data.Extensions;
+using Infrastructure.Data.Mongo;
+using UserApi.Repositories.v1;
+using UserApi.Repositories.v1.Interfaces;
+using UserApi.Services.v1;
+using UserApi.Services.v1.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

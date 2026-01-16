@@ -1,12 +1,12 @@
-﻿using Domain.TicketEngine.CustomerApi.Entities;
-using Infrastructure.CustomerApi.Data.Bearer_Token.Interfaces;
-using Infrastructure.CustomerApi.Data.Bearer_Token.Settings;
+﻿using Domain.User.Entities;
+using Infrastructure.Data.Bearer_Token.Interfaces;
+using Infrastructure.Data.Bearer_Token.Settings;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Infrastructure.CustomerApi.Data.Bearer_Token;
+namespace Infrastructure.Data.Bearer_Token;
 
 public sealed class AuthToken : IAuthToken
 {

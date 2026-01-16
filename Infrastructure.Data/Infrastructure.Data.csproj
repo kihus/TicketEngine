@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.TicketEngine.Client\Domain.TicketEngine.CustomerApi.csproj" />
+    <ProjectReference Include="..\Domain.UserApi\Domain.User.csproj" />
   </ItemGroup>
 
 </Project>

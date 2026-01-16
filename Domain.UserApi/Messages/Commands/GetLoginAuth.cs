@@ -1,4 +1,4 @@
-﻿namespace Domain.TicketEngine.CustomerApi.Messages.Commands;
+﻿namespace Domain.User.Messages.Commands;
 
 public class GetLoginAuth
 {

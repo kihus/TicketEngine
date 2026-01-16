@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Domain.TicketEngine.CustomerApi.Entities;
+namespace Domain.User.Entities;
 
 public class Customer(
     string name,

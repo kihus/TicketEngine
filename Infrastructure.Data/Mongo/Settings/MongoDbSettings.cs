@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.CustomerApi.Data.Mongo.Settings;
+﻿namespace Infrastructure.Data.Mongo.Settings;
 
 public class MongoDbSettings
 {

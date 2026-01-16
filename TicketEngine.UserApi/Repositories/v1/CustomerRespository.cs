@@ -1,11 +1,11 @@
-﻿using Domain.TicketEngine.CustomerApi.DTOs;
-using Domain.TicketEngine.CustomerApi.Entities;
-using Domain.TicketEngine.CustomerApi.Extensions;
-using Infrastructure.CustomerApi.Data.Mongo;
+﻿using Domain.User.DTOs;
+using Domain.User.Entities;
+using Domain.User.Extensions;
+using Infrastructure.Data.Mongo;
 using MongoDB.Driver;
-using TicketEngine.CustomerApi.Repositories.v1.Interfaces;
+using UserApi.Repositories.v1.Interfaces;
 
-namespace TicketEngine.CustomerApi.Repositories.v1;
+namespace UserApi.Repositories.v1;
 
 public class CustomerRespository(
     MongoContext mongoDatabase

@@ -1,8 +1,8 @@
-﻿using Domain.TicketEngine.CustomerApi.DTOs;
-using Domain.TicketEngine.CustomerApi.Entities;
-using Domain.TicketEngine.CustomerApi.Messages.Commands;
+﻿using Domain.User.DTOs;
+using Domain.User.Entities;
+using Domain.User.Messages.Commands;
 
-namespace Domain.TicketEngine.CustomerApi.Extensions;
+namespace Domain.User.Extensions;
 
 public static class CustomerExtension
 {

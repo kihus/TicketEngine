@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.CustomerApi.Data.Bearer_Token.Settings;
+﻿namespace Infrastructure.Data.Bearer_Token.Settings;
 
 public class TokenSettings
 {

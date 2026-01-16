@@ -1,7 +1,7 @@
-﻿using Domain.TicketEngine.CustomerApi.DTOs;
-using Domain.TicketEngine.CustomerApi.Messages.Commands;
+﻿using Domain.User.DTOs;
+using Domain.User.Messages.Commands;
 
-namespace TicketEngine.CustomerApi.Services.v1.Interfaces;
+namespace UserApi.Services.v1.Interfaces;
 
 public interface ICustomerService
 {

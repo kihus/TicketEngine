@@ -1,8 +1,8 @@
-﻿using Infrastructure.CustomerApi.Data.Mongo.Settings;
+﻿using Infrastructure.Data.Mongo.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure.CustomerApi.Data.Extensions;
+namespace Infrastructure.Data.Extensions;
 
 public static class ServiceCollectionExtension
 {

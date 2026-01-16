@@ -1,11 +1,11 @@
 <Solution>
   <Folder Name="/1- Presentation/">
-    <Project Path="TicketEngine.UserApi/TicketEngine.CustomerApi.csproj" />
+    <Project Path="TicketEngine.UserApi/UserApi.csproj" />
   </Folder>
   <Folder Name="/2- Domain/">
-    <Project Path="Domain.TicketEngine.Client/Domain.TicketEngine.CustomerApi.csproj" Id="40effeda-2825-4804-993f-d7b5e87d457b" />
+    <Project Path="Domain.UserApi/Domain.User.csproj" />
   </Folder>
   <Folder Name="/3- Infrastructure/">
-    <Project Path="Infrastructure.Data/Infrastructure.CustomerApi.Data.csproj" Id="98c03490-ee2b-4890-bb08-6fd99d4fa50c" />
+    <Project Path="Infrastructure.Data/Infrastructure.Data.csproj" Id="98c03490-ee2b-4890-bb08-6fd99d4fa50c" />
   </Folder>
 </Solution>

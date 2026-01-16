@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace TicketEngine.CustomerApi.Controllers;
+namespace UserApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

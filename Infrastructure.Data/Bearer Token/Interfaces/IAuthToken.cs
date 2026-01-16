@@ -1,6 +1,6 @@
-﻿using Domain.TicketEngine.CustomerApi.Entities;
+﻿using Domain.User.Entities;
 
-namespace Infrastructure.CustomerApi.Data.Bearer_Token.Interfaces;
+namespace Infrastructure.Data.Bearer_Token.Interfaces;
 
 public interface IAuthToken
 {

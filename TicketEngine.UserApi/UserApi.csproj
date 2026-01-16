@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.TicketEngine.Client\Domain.TicketEngine.CustomerApi.csproj" />
-    <ProjectReference Include="..\Infrastructure.Data\Infrastructure.CustomerApi.Data.csproj" />
+    <ProjectReference Include="..\Domain.UserApi\Domain.User.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data\Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

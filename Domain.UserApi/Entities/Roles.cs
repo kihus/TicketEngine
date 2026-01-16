@@ -1,4 +1,4 @@
-﻿namespace Domain.TicketEngine.CustomerApi.Entities;
+﻿namespace Domain.User.Entities;
 
 public static class Roles
 {

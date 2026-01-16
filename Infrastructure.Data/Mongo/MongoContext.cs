@@ -1,9 +1,8 @@
-﻿
-using Domain.TicketEngine.CustomerApi.Entities;
-using Infrastructure.CustomerApi.Data.Mongo.Settings;
+﻿using Domain.User.Entities;
+using Infrastructure.Data.Mongo.Settings;
 using MongoDB.Driver;
 
-namespace Infrastructure.CustomerApi.Data.Mongo;
+namespace Infrastructure.Data.Mongo;
 
 public class MongoContext
 {

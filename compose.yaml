@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  user-api:
+    build: 
+      context: .
+      dockerfile: 
+        TicketEngine.UserApi/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - MongoSettings__ConnectionURI=${MONGOSETTINGS_CONNECTIONURI}
+      - MongoSettings__DatabaseName=${MONGOSETTINGS_DATABASENAME}

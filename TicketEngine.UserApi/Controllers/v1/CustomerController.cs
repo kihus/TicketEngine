@@ -1,9 +1,9 @@
-﻿using Domain.TicketEngine.CustomerApi.Messages.Commands;
+﻿using Domain.User.Messages.Commands;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TicketEngine.CustomerApi.Services.v1.Interfaces;
+using UserApi.Services.v1.Interfaces;
 
-namespace TicketEngine.CustomerApi.Controllers.v1;
+namespace UserApi.Controllers.v1;
 
 [Route("api/v1/[controller]")]
 [ApiController]
@@ -35,7 +35,7 @@ public class CustomerController(
         }
     }
 
-    [HttpGet]
+    [HttpPost("auth")]
     public async Task<IActionResult> GetTokenAuthAsync([FromBody] GetLoginAuth login)
     {
         try
@@ -43,7 +43,9 @@ public class CustomerController(
             if (login is null)
                 return BadRequest("Error! Login command cannot be null");
 
-            return Ok();
+            var token = await _customerService.GetTokenAuthAsync(login);
+
+            return Ok(token);
         }
         catch(ArgumentNullException ex)
         {

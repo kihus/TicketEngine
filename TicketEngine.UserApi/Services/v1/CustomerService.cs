@@ -1,12 +1,12 @@
-﻿using Domain.TicketEngine.CustomerApi.DTOs;
-using Domain.TicketEngine.CustomerApi.Entities;
-using Domain.TicketEngine.CustomerApi.Extensions;
-using Domain.TicketEngine.CustomerApi.Messages.Commands;
-using TicketEngine.CustomerApi.Repositories.v1.Interfaces;
-using TicketEngine.CustomerApi.Services.v1.Interfaces;
+﻿using Domain.User.DTOs;
+using Domain.User.Entities;
+using Domain.User.Extensions;
+using Domain.User.Messages.Commands;
+using UserApi.Repositories.v1.Interfaces;
+using UserApi.Services.v1.Interfaces;
 using static BCrypt.Net.BCrypt;
 
-namespace TicketEngine.CustomerApi.Services.v1;
+namespace UserApi.Services.v1;
 
 public class CustomerService(
 	ICustomerRepository customerRepository
@@ -60,7 +60,7 @@ public class CustomerService(
 			if (customer is null)
 				throw new ArgumentException("Error! User not found!");
 
-			if (!Verify(customer.Password, login.Password))
+			if (!Verify(login.Password, customer.Password))
 				throw new ArgumentException("Error! Passowords don't match");
 
 			return "goiaba";
