@@ -58,7 +58,7 @@ public class CustomerController(
         }
     }
 
-    [Authorize (Roles.Staff)]
+    [Authorize(Roles.Staff)]
     [HttpGet("get-all")]
     public async Task<IActionResult> GetAllCustomers()
     {

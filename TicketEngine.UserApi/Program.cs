@@ -1,6 +1,6 @@
+using Infrastructure.Data;
 using Infrastructure.Data.Bearer_Token;
 using Infrastructure.Data.Bearer_Token.Interfaces;
-using Infrastructure.Data.Extensions;
 using Infrastructure.Data.Mongo;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;

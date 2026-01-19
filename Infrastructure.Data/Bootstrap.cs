@@ -3,7 +3,7 @@ using Infrastructure.Data.Mongo.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure.Data.Extensions;
+namespace Infrastructure.Data;
 
 public static class Bootstrap
 {
