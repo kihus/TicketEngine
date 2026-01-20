@@ -9,11 +9,9 @@ public static class Roles
 
 	public static bool IsValid(string role)
 	{
-		if (role != Admin || role != Organizer || role != Staff || role != Customer)
-		{
-			return true;
-		}
-		else
+		if (role != Admin && role != Organizer && role != Staff && role != Customer)
 			return false;
+		else
+			return true;
 	}
 }

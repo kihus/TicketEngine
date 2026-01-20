@@ -59,7 +59,7 @@ public class CustomerController(
 
     [Authorize(Roles = "Admin")]
     [HttpGet("get-all")]
-    public async Task<IActionResult> GetAllCustomers()
+    public async Task<IActionResult> GetAllCustomersAsync()
     {
         try
         {
@@ -70,6 +70,19 @@ public class CustomerController(
         catch (Exception ex)
         {
             return StatusCode(403, ex.Message);
+        }
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetCustomerByIdAsync()
+    {
+        try
+        {
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(400, ex.Message);
         }
     }
 }
