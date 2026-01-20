@@ -1,5 +1,4 @@
-﻿using Domain.User.Entities;
-using Domain.User.Messages.Commands;
+﻿using Domain.User.Messages.Commands;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserApi.Services.v1.Interfaces;
@@ -58,15 +57,15 @@ public class CustomerController(
         }
     }
 
-    [Authorize(Roles.Staff)]
+    [Authorize(Roles = "Admin")]
     [HttpGet("get-all")]
     public async Task<IActionResult> GetAllCustomers()
     {
         try
         {
-            var customers = _customerService.GetAllCustomersAsync();
+            var customers = await _customerService.GetAllCustomersAsync();
 
-            return Ok("vc esta autorizado");
+            return Ok(customers);
         }
         catch (Exception ex)
         {

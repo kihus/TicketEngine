@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 namespace Infrastructure.Data.Mongo;
 
-public class MongoContext
+public class MongoContext 
 {
     private readonly IMongoDatabase _database;
 

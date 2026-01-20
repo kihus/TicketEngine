@@ -5,7 +5,7 @@ namespace UserApi.Repositories.v1.Interfaces;
 
 public interface ICustomerRepository
 {
-    Task<IEnumerable<CustomerResponseDto>> GetAllCustomersAsync();
+    Task<List<CustomerResponseDto>> GetAllCustomersAsync();
 	Task CreateCustomerAsync(Customer customer);
 	Task<Customer> GetUserByEmailAsync(string email);
 }

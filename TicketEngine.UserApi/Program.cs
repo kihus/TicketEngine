@@ -1,6 +1,7 @@
 using Infrastructure.Data;
 using Infrastructure.Data.Bearer_Token;
 using Infrastructure.Data.Bearer_Token.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using UserApi.Repositories.v1;
 using UserApi.Repositories.v1.Interfaces;
 using UserApi.Services.v1;

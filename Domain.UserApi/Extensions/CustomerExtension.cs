@@ -1,7 +1,6 @@
 ﻿using Domain.User.DTOs;
 using Domain.User.Entities;
 using Domain.User.Messages.Commands;
-using System.Diagnostics;
 
 namespace Domain.User.Extensions;
 
@@ -18,7 +17,7 @@ public static class CustomerExtension
 			LastName = customer.LastName,
 			Birthdate = DateOnly.FromDateTime(customer.Birthdate),
 			Phone = customer.Phone,
-			Role = customer.Role,
+			Role = customer.Role
 		};
 	}
 

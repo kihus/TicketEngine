@@ -25,7 +25,7 @@ public class CustomerRespository(
 		}
 	}
 
-	public async Task<IEnumerable<CustomerResponseDto>> GetAllCustomersAsync()
+	public async Task<List<CustomerResponseDto>> GetAllCustomersAsync()
     {
         try
         {

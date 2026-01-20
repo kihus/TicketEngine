@@ -29,28 +29,27 @@ public static class Bootstrap
 
 	public static AuthenticationBuilder AddTokenAuthentication(this IServiceCollection service, IConfiguration configuration)
 	{
-		var authentication = new AuthenticationOptions();
-		var tokenKey = Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"] ?? string.Empty);
-		var jwtBearerOptions = new JwtBearerOptions();
-
-		authentication.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-		authentication.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-		jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters()
-		{
-			ValidateLifetime = true,
-			ClockSkew = TimeSpan.Zero,
-			ValidateAudience = true,
-			ValidAudience = configuration["JwtSettings:Audience"],
-			ValidateIssuer = true,
-			ValidIssuer = configuration["JwtSettings:Issuer"],
-			ValidateIssuerSigningKey = true,
-			IssuerSigningKey = new SymmetricSecurityKey(tokenKey)
-		};
-
 		return service
-				.AddAuthentication(options => { options = authentication; })
-				.AddJwtBearer(options => { options = jwtBearerOptions; });
-	}
+				.AddAuthentication(options =>
+				{
+					options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+					options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+				}).AddJwtBearer(options =>
+				{
+					var tokenKey = Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"] ?? string.Empty);
 
+					options.TokenValidationParameters = new TokenValidationParameters()
+					{
+						ValidateLifetime = true,
+						ClockSkew = TimeSpan.Zero,
+						ValidateAudience = true,
+						ValidAudience = configuration["JwtSettings:Audience"],
+						ValidateIssuer = true,
+						ValidIssuer = configuration["JwtSettings:Issuer"],
+						ValidateIssuerSigningKey = true,
+						IssuerSigningKey = new SymmetricSecurityKey(tokenKey),
+						RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+					};
+				});
+	}
 }
