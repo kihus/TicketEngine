@@ -39,13 +39,27 @@ public class CustomerRespository(
         }
     }
 
-	public async Task<Customer> GetUserByEmailAsync(string email)
+	public async Task<Customer> GetCustomerByEmailAsync(string email)
 	{
 		try
 		{
-			var user = await _customerCollection.Find(c => c.Email == email).FirstOrDefaultAsync();
+			var customer = await _customerCollection.Find(c => c.Email == email).FirstOrDefaultAsync();
 
-			return user;
+			return customer;
+		}
+		catch (MongoException ex)
+		{
+			throw new MongoException("An mongo error occured while process your request: " + ex.Message);
+		}
+	}
+
+	public async Task<Customer?> GetCustomerByCpfAsync(string cpf)
+	{
+		try
+		{
+			var customer = await _customerCollection.Find(c => c.Document == cpf).FirstOrDefaultAsync();
+
+			return customer;
 		}
 		catch (MongoException ex)
 		{

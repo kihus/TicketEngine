@@ -7,5 +7,6 @@ public interface ICustomerRepository
 {
     Task<List<CustomerResponseDto>> GetAllCustomersAsync();
 	Task CreateCustomerAsync(Customer customer);
-	Task<Customer> GetUserByEmailAsync(string email);
+	Task<Customer> GetCustomerByEmailAsync(string email);
+	Task<Customer> GetCustomerByCpfAsync(string cpf);
 }

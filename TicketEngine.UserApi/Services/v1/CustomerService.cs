@@ -58,7 +58,7 @@ public class CustomerService(
 	{
 		try
 		{
-			var customer = await _customerRepository.GetUserByEmailAsync(login.Email);
+			var customer = await _customerRepository.GetCustomerByEmailAsync(login.Email);
 
 			if (customer is null)
 				throw new ArgumentException("Error! User not found!");
@@ -73,4 +73,19 @@ public class CustomerService(
 			throw new Exception(ex.Message);
 		}
 	}
+
+	public async Task<CustomerResponseDto?> GetCustomerByCpfAsync(string cpf)
+	{
+		try
+		{
+			var customer = await _customerRepository.GetCustomerByCpfAsync(cpf);
+
+			return customer.ToDto();
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
+
 }

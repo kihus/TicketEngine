@@ -72,13 +72,18 @@ public class CustomerController(
             return StatusCode(403, ex.Message);
         }
     }
-
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetCustomerByIdAsync()
+    [Authorize(Roles = "Staff,Admin")]
+    [HttpGet("{cpf}")]
+    public async Task<IActionResult> GetCustomerByCpfAsync(string cpf)
     {
         try
         {
-            return Ok();
+            var customer = await _customerService.GetCustomerByCpfAsync(cpf);
+
+            if (customer is null)
+                return StatusCode(404, "Register not found");
+
+            return Ok(customer);
         }
         catch (Exception ex)
         {
