@@ -1,8 +1,10 @@
-﻿using MongoDB.Bson;
+﻿using Google.Cloud.Firestore;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Domain.User.Entities;
 
+[FirestoreData]
 public class Customer(
     string name,
     string lastName,
@@ -14,7 +16,7 @@ public class Customer(
     )
 {
     [BsonId]
-    public ObjectId Id { get; init; } = ObjectId.GenerateNewId();
+    public string Id { get; init; } = ObjectId.GenerateNewId().ToString();
     public string Name { get; private set; } = name;
     public string LastName { get; private set; } = lastName;
     public DateTime Birthdate { get; private set; } = birthdate;
@@ -25,6 +27,7 @@ public class Customer(
     public string Password { get; private set; } = password;
     public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
 
+    
     public Customer(
         string name,
         string lastName,

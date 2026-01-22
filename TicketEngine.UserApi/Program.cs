@@ -14,6 +14,8 @@ builder.Services.AddControllers();
 builder.Services.AddMongoSettings(builder.Configuration);
 builder.Services.AddTokenSettings(builder.Configuration);
 builder.Services.AddTokenAuthentication(builder.Configuration);
+builder.Services.AddFirestoreSettings(builder.Configuration);
+builder.Services.AddInfrastructure();
 
 builder.Services.AddAuthorization();
 
